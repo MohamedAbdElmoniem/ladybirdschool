@@ -77,7 +77,7 @@ class NavBarComponent extends Component {
                 <Link to='/methodology'>Methodology</Link>
               </Button>
               <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/aboutus'>Admission</Link>
+                <Link to='/admission'>Admission</Link>
               </Button>
               <Button size='small' variant="contained" color='primary' className={classes.button}>
                 <Link to='/aboutus'>Health & safety</Link>

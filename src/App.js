@@ -7,6 +7,7 @@ import HomePage from "./containers/HomePage";
 import AboutUsPage from "./containers/AboutUsPage";
 import GalleryPage from "./containers/GalleryPage";
 import MethodologyPage from "./containers/MethodologyPage";
+import AdmissionPage from "./containers/AdmissionPage";
 import NavBar from "./containers/NavBar";
 import Button from '@material-ui/core/Button';
 
@@ -35,6 +36,7 @@ class MenuAppBar extends Component {
           <Route path="/aboutus" component={AboutUsPage} />
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/methodology" component={MethodologyPage} />
+          <Route path="/admission" component={AdmissionPage} />
         </div>
       </Router>
     );
