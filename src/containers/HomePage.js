@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { PagesContentServices } from "../services/PagesContentServices";
 import * as _ from 'lodash'
 import CardRow from "../components/CardRow";
+import ReactLoading from 'react-loading';
 
 const styles = {
   root: {
@@ -67,11 +68,12 @@ class HomePage extends Component {
           </Grid>
           <Grid item xs={4}></Grid>
         </Grid>
-        {this.state.homeContent && this.state.homeContent.map((cardRowDataArray, index) => {
+        {this.state.homeContent ? this.state.homeContent.map((cardRowDataArray, index) => {
           return (
             <CardRow cardRowDataArray={cardRowDataArray} />
           )
-        })}
+        }) : <ReactLoading type={"spin"} color={"black"} height={'100%'} width={'100%'} />
+        }
       </div>
     );
   }
