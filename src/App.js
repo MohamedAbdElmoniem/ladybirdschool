@@ -9,6 +9,7 @@ import GalleryPage from "./containers/GalleryPage";
 import MethodologyPage from "./containers/MethodologyPage";
 import AdmissionPage from "./containers/AdmissionPage";
 import NavBar from "./containers/NavBar";
+import Footer from "./containers/Footer";
 import Button from '@material-ui/core/Button';
 
 const styles = {
@@ -32,12 +33,16 @@ class MenuAppBar extends Component {
       <Router>
         <div className={classes.root}>
           <NavBar></NavBar>
+          <br/>
           <Route path="/" exact component={HomePage} />
           <Route path="/aboutus" component={AboutUsPage} />
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/methodology" component={MethodologyPage} />
           <Route path="/admission" component={AdmissionPage} />
+          <br/>
+          <br/>
         </div>
+        <Footer></Footer>
       </Router>
     );
   }

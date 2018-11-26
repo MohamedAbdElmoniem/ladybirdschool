@@ -26,9 +26,14 @@ const styles = {
     margin: 10,
     'background-color': 'orange',
     'margin-top': 17,
+    'font-size': '1rem',
     "&:hover": {
       'background-color': 'orange'
     }
+  },
+  gridMargin: {
+    marginTop: 38,
+    marginLeft: 10
   }
 };
 
@@ -60,10 +65,9 @@ class NavBarComponent extends Component {
           <Grid container spacing={24}>
             <Grid item xs={0.5}></Grid>
             <Grid item xs={3.5}>
-              <h2>ladybird pre-school</h2>
+              <img className="logoStyle" src={require('./img/logo.png')} />
             </Grid>
-            <Grid item xs={0.2}></Grid>
-            <Grid item xs={9}>
+            <Grid className={classes.gridMargin} item xs={9}>
               <Button size='small' variant="contained" color='primary' className={classes.button}>
                 <Link to='/'>Home</Link>
               </Button>
