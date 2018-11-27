@@ -42,7 +42,6 @@ const styles = {
   },
   anchor: {
     'text-decoration': 'none',
-    'color': 'green',
     "&:hover": {
       'text-decoration': 'none',
       'color': 'white'
@@ -86,22 +85,22 @@ class NavBarComponent extends Component {
           <Collapse isOpen={this.state.collapsed} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem >
-                <Button outline color={'success'} className={classes.button}><Link to='/gallery' className={classes.anchor} ><h4 className={classes.anchor}>Gallery</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/gallery' className={classes.anchor} ><h4 className={classes.anchor}>Gallery</h4></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'success'} className={classes.button}><Link to='/methodology' className={classes.anchor}><h4 className={classes.anchor}>Methodology</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/methodology' className={classes.anchor}><h4 className={classes.anchor}>Methodology</h4></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'success'} className={classes.button}><Link to='/admission' className={classes.anchor}><h4 className={classes.anchor}>Admission</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/admission' className={classes.anchor}><h4 className={classes.anchor}>Admission</h4></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'success'} className={classes.button}><Link to='/aboutus' className={classes.anchor}><h4 className={classes.anchor}>About us</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/aboutus' className={classes.anchor}><h4 className={classes.anchor}>About us</h4></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'success'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'success'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
               </NavItem>
             </Nav>
           </Collapse>

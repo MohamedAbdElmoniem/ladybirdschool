@@ -16,11 +16,14 @@ const styles = {
         marginTop: 20
     },
     tabContainer: {
-        'background-color': 'gray'
+        'background-color':'#f8f9fa',        
+        'box-shadow':'0px 4px 8px 0px rgba(0,0,0,0.2)'
     },
     tabItem: {
-        'background-color': "orange",
-        'border': '0.5px solid black'
+        'background-color': "#b1d3f8",
+        'border': '0.5px solid #f8f9fa'
+    },
+    tabBodyColor:{
     }
 };
 
@@ -49,7 +52,6 @@ class MethodologyPage extends Component {
 
     componentDidMount() {
         PagesContentServices.getMethodologyPageContent().then((response) => {
-            debugger
             this.setState({ content: response.data.content })
         })
     }
@@ -65,7 +67,6 @@ class MethodologyPage extends Component {
 
     render() {
         const { classes } = this.props;
-        debugger
         return (
             <Grid container spacing={24}>
                 <Grid item xs={1}></Grid>
@@ -89,9 +90,9 @@ class MethodologyPage extends Component {
                             index={this.state.value}
                             onChangeIndex={this.handleChangeIndex}
                         >
-                            <TabContainer>{this.state.content[0].desc}</TabContainer>
-                            <TabContainer>{this.state.content[1].desc}</TabContainer>
-                            <TabContainer>Item Three</TabContainer>
+                            <TabContainer className={classes.tabBodyColor}>{this.state.content[0].desc}</TabContainer>
+                            <TabContainer className={classes.tabBodyColor}>{this.state.content[1].desc}</TabContainer>
+                            <TabContainer className={classes.tabBodyColor}>Item Three</TabContainer>
                         </SwipeableViews>
                     </div>) : <Skeleton count={10} height={20} />}
                 </Grid>

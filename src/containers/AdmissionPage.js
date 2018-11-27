@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper, Typography, Grid } from "@material-ui/core";
 import { PagesContentServices } from "../services/PagesContentServices";
 import Skeleton from 'react-loading-skeleton';
+import { Col, Row, Card, CardBody, CardHeader, Container } from "reactstrap";
 
 const styles = theme => ({
     root: {
@@ -32,38 +32,33 @@ class AdmissionPage extends Component {
 
     render() {
         const { classes } = this.props;
-
+        const { content } = this.state;
         return (
-            <div>
-                {this.state.content.length > 0 ? <Grid container spacing={24}>
-                    <Grid item xs={1} >
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Paper className={classes.root} elevation={1}>
-                            <Typography variant="h5" component="h3">
-                                {this.state.content[0].title}
-                            </Typography>
-                            <Typography component="p">
-                                {this.state.content[0].desc.map((value, index) => {
-                                    return <h4 key={index}>{value}</h4>
-                                })}
-                            </Typography>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={2}></Grid>
-                    <Grid xs={3} item >  <Paper className={classes.root} elevation={1}>
-                        <Typography variant="h5" component="h3">
-                            {this.state.content[1].title}
-                        </Typography>
-                        <Typography component="p">
-                            {this.state.content[1].desc.map((value, index) => {
-                                return <h4 key={index}>{value}</h4>
-                            })}
-                        </Typography>
-                    </Paper></Grid>
-                    <Grid xs={1} item></Grid>
-                </Grid> : <Skeleton count={10} height={20} />}
-            </div>
+            <Container>
+                {this.state.content.length > 0 ? (
+                    <Row>
+                        <Col sm={6}>
+                            <Card>
+                                <CardHeader>
+                                    {content[0].title}
+                                </CardHeader>
+                                <CardBody>{content[0].desc}</CardBody>
+                            </Card>
+                        </Col>
+                        <Col sm={6}>
+                            <Card>
+                                <CardHeader>
+                                    {content[1].title}
+                                </CardHeader>
+                                <CardBody>{content[1].desc.map((value, index) => {
+                                    return <p>- {value}</p>
+                                })}</CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                )
+                    : <Skeleton count={10} height={20} />}
+            </Container>
         )
     }
 }

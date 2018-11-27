@@ -26,7 +26,7 @@ a:-webkit-any-link {
 }
 
 #myFooter .footer-copyright {
-  background-color: #22651c;
+  background-color: #0b85a9;
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
@@ -66,14 +66,14 @@ a:-webkit-any-link {
 }
 
 #myFooter a {
-  color: green;
+  color: #0b85a9;
   text-decoration: none;
 }
 
 #myFooter a:hover,
 #myFooter a:focus {
   text-decoration: none;
-  color: green;
+  color: #0b85a9;
 }
 
 #myFooter .social-networks {

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
-import CardMedia from '@material-ui/core/CardMedia';
 import { PagesContentServices } from "../services/PagesContentServices";
 import * as _ from 'lodash'
 import CardRow from "../components/CardRow";
 import Skeleton from 'react-loading-skeleton';
-import { Row,Col ,Jumbotron} from "reactstrap";
+import {Container} from "reactstrap";
 
 const styles = {
   root: {
@@ -54,14 +52,14 @@ class HomePage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <Container>
         {this.state.homeContent.length > 0 ? this.state.homeContent.map((cardRowDataArray, index) => {
           return (
             [<CardRow cardRowDataArray={cardRowDataArray} />, <br />]
           )
         }) : <Skeleton count={10} height={20} />
         }
-      </div>
+      </Container>
     );
   }
 }
