@@ -5,9 +5,9 @@ import {
     CardTitle, CardSubtitle, Row, Col
 } from 'reactstrap';
 const styles = {
-"rowMargin":{
-    margin:10
-}
+    "rowMargin": {
+        margin: 10
+    }
 };
 
 class CardRow extends Component {
@@ -25,7 +25,14 @@ class CardRow extends Component {
                             <div>
                                 <Card>
                                     <CardBody>
-                                        <CardTitle> <h3>{content.title}</h3></CardTitle>
+                                        <Row>
+                                            <Col xs={8}><CardTitle> <h3>{content.title}</h3></CardTitle>
+                                            </Col>
+                                            <Col xs={1}></Col>
+                                            <Col xs={3}>
+                                                <img width="100%" height="100%" src={require(`../containers/img/${content.id}.png`)} />
+                                            </Col>
+                                        </Row>
                                     </CardBody>
                                     <img width="100%" src={content.cardImageUrl} alt="ladybird school" />
                                     <CardBody>

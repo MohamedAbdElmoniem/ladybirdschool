@@ -55,12 +55,6 @@ class HomePage extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <Row>
-          <Col sm={2}></Col>
-          <Col sm={8}><img width="100%" src="https://i.lensdump.com/i/Aq80T1.png" />
-          </Col>
-          <Col sm={2}></Col>
-        </Row>
         {this.state.homeContent.length > 0 ? this.state.homeContent.map((cardRowDataArray, index) => {
           return (
             [<CardRow cardRowDataArray={cardRowDataArray} />, <br />]
