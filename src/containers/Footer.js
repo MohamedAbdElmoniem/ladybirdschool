@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import { Navbar } from "reactstrap";
 export default class Footer extends Component {
     render() {
         return (
-            <footer id="myFooter">
+            <Navbar color={'light'} id="myFooter">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
@@ -37,15 +37,12 @@ export default class Footer extends Component {
                             <div class="social-networks">
                                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer-copyright">
-                    <p>© 2018 Copyright</p>
-                </div>
-            </footer>
+            </Navbar>
         )
     }
 }

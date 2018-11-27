@@ -14,14 +14,14 @@ code {
 }
 
 a:-webkit-any-link {
-  color:white;
+  color:black;
   cursor: pointer;
   text-decoration: none;
 }
 
 #myFooter {
   background-color:rgb(228, 132, 58);
-  color: white;
+  color: black;
   padding-top: 30px;
 }
 
@@ -43,7 +43,7 @@ a:-webkit-any-link {
 
 #myFooter .footer-copyright p {
   margin: 10px;
-  color: #ccc;
+  color: black;
 }
 
 #myFooter ul {
@@ -54,7 +54,7 @@ a:-webkit-any-link {
 
 #myFooter h5 {
   font-size: 18px;
-  color: white;
+  color:black;
   font-weight: bold;
   margin-top: 30px;
 }
@@ -62,18 +62,18 @@ a:-webkit-any-link {
 #myFooter h2 a{
   font-size: 50px;
   text-align: center;
-  color: #fff;
+  color: black;
 }
 
 #myFooter a {
-  color: #d2d1d1;
+  color: black;
   text-decoration: none;
 }
 
 #myFooter a:hover,
 #myFooter a:focus {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 #myFooter .social-networks {
@@ -84,13 +84,24 @@ a:-webkit-any-link {
 
 #myFooter .social-networks a {
   font-size: 32px;
-  color: #f9f9f9;
   padding: 10px;
   transition: 0.2s;
 }
 
-#myFooter .social-networks a:hover {
+#myFooter .social-networks a {
   text-decoration: none;
+}
+
+#myFooter .facebook {
+  color: #0077e2;
+}
+
+#myFooter .google {
+  color: #ef1a1a;
+}
+
+#myFooter .twitter {
+  color: #00aced;
 }
 
 #myFooter .facebook:hover {
@@ -105,8 +116,15 @@ a:-webkit-any-link {
   color: #00aced;
 }
 
+#myFooter .instagram {
+  color: #7e0b47;
+}
+#myFooter .instagram:hover {
+  color: #7e0b47;
+}
+
 #myFooter .btn {
-  color: white;
+  color: black;
   background-color: #22651c;
   border-radius: 20px;
   border: none;
