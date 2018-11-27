@@ -66,14 +66,14 @@ a:-webkit-any-link {
 }
 
 #myFooter a {
-  color: black;
+  color: green;
   text-decoration: none;
 }
 
 #myFooter a:hover,
 #myFooter a:focus {
   text-decoration: none;
-  color: black;
+  color: green;
 }
 
 #myFooter .social-networks {
