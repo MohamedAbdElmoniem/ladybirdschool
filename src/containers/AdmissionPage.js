@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Paper, Typography, Grid } from "@material-ui/core";
 import { PagesContentServices } from "../services/PagesContentServices";
+import Skeleton from 'react-loading-skeleton';
 
 const styles = theme => ({
     root: {
@@ -61,7 +62,7 @@ class AdmissionPage extends Component {
                         </Typography>
                     </Paper></Grid>
                     <Grid xs={1} item></Grid>
-                </Grid> : null}
+                </Grid> : <Skeleton count={10} height={20} />}
             </div>
         )
     }

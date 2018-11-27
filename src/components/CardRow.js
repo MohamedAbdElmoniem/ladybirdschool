@@ -1,33 +1,13 @@
 import React, { Component } from 'react'
-import { Grid, CardActionArea, CardMedia, CardContent, Typography, Card } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-
+import {
+    Card, CardImg, CardText, CardBody, CardLink,
+    CardTitle, CardSubtitle, Row, Col
+} from 'reactstrap';
 const styles = {
-    root: {
-        flexGrow: 1,
-    },
-    grow: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
-    },
-    bgColor: {
-        backgroundColor: "green"
-    },
-    card: {
-        maxWidth: 370,
-        'margin-left': 50
-    },
-    homeImage: {
-        'margin-top': 15,
-        maxWidth: 700
-    },
-    media: {
-        // ⚠️ object-fit is not supported by IE 11.
-        objectFit: 'cover',
-    },
+"rowMargin":{
+    margin:10
+}
 };
 
 class CardRow extends Component {
@@ -37,35 +17,26 @@ class CardRow extends Component {
         const { classes } = this.props;
 
         return (
-            <Grid container spacing={24}>
-                <Grid item xs={1}></Grid>
+
+            <Row className={classes.rowMargin}>
                 {this.props.cardRowDataArray && this.props.cardRowDataArray.map((content, index) => {
                     return (
-                        <Grid item xs={3}>
-                            <Card className={classes.card}>
-                                <CardActionArea>
-                                    <CardMedia
-                                        component="img"
-                                        alt="Contemplative Reptile"
-                                        className={classes.media}
-                                        height="140"
-                                        image={content.cardImageUrl}
-                                        title="Contemplative Reptile"
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2">
-                                            {content.title}
-                                        </Typography>
-                                        <Typography component="p">
-                                            {content.desc}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
+                        <Col sm={4}>
+                            <div>
+                                <Card>
+                                    <CardBody>
+                                        <CardTitle> <h3>{content.title}</h3></CardTitle>
+                                    </CardBody>
+                                    <img width="100%" src={content.cardImageUrl} alt="ladybird school" />
+                                    <CardBody>
+                                        <CardText><h5>{content.desc}</h5></CardText>
+                                    </CardBody>
+                                </Card>
+                            </div>
+                        </Col>
                     )
                 })}
-            </Grid>
+            </Row>
         )
     }
 }

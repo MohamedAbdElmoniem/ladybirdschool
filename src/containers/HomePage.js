@@ -6,7 +6,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { PagesContentServices } from "../services/PagesContentServices";
 import * as _ from 'lodash'
 import CardRow from "../components/CardRow";
-import ReactLoading from 'react-loading';
+import Skeleton from 'react-loading-skeleton';
+import { Row,Col ,Jumbotron} from "reactstrap";
 
 const styles = {
   root: {
@@ -54,25 +55,17 @@ class HomePage extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <Grid container spacing={24}>
-          <Grid item xs={3}></Grid>
-          <Grid item xs={8}>
-            <CardMedia
-              component="img"
-              alt="Contemplative Reptile"
-              className={classes.homeImage}
-              height="250"
-              image="https://i.lensdump.com/i/Aq80T1.png"
-              title="Contemplative Reptile"
-            />
-          </Grid>
-          <Grid item xs={4}></Grid>
-        </Grid>
-        {this.state.homeContent ? this.state.homeContent.map((cardRowDataArray, index) => {
+        <Row>
+          <Col sm={2}></Col>
+          <Col sm={8}><img width="100%" src="https://i.lensdump.com/i/Aq80T1.png" />
+          </Col>
+          <Col sm={2}></Col>
+        </Row>
+        {this.state.homeContent.length > 0 ? this.state.homeContent.map((cardRowDataArray, index) => {
           return (
-            <CardRow cardRowDataArray={cardRowDataArray} />
+            [<CardRow cardRowDataArray={cardRowDataArray} />, <br />]
           )
-        }) : <ReactLoading type={"spin"} color={"black"} height={'100%'} width={'100%'} />
+        }) : <Skeleton count={10} height={20} />
         }
       </div>
     );

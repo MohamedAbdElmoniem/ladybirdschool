@@ -7,7 +7,7 @@ export default class Footer extends Component {
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img className="logoStyle" src={require('./img/logo.png')} />
+                            <img width="100%" height="70%" src={require('./img/logo.png')} />
                         </div>
                         <div class="col-sm-2">
                             <h5>Ladybird school</h5>
@@ -39,7 +39,6 @@ export default class Footer extends Component {
                                 <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                             </div>
-                            <button type="button" class="btn btn-default">Ladybird school</button>
                         </div>
                     </div>
                 </div>

@@ -6,8 +6,19 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
-
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav, Button,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 const styles = {
   root: {
     flexGrow: 1,
@@ -23,17 +34,19 @@ const styles = {
     backgroundColor: "green"
   },
   button: {
-    margin: 10,
-    'background-color': 'orange',
-    'margin-top': 17,
-    'font-size': '1rem',
-    "&:hover": {
-      'background-color': 'orange'
-    }
+    margin: 10
   },
   gridMargin: {
     marginTop: 38,
     marginLeft: 10
+  },
+  anchor: {
+    'text-decoration': 'none',
+    'color': 'green',
+    "&:hover": {
+      'text-decoration': 'none',
+      'color': 'white'
+    }
   }
 };
 
@@ -43,9 +56,15 @@ class NavBarComponent extends Component {
     this.state = {
       auth: true,
       anchorEl: null,
+      collapsed: false
+
     };
   }
-
+  toggleNavbar = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
   handleChange = event => {
     this.setState({ auth: event.target.checked });
   };
@@ -60,42 +79,35 @@ class NavBarComponent extends Component {
     const open = Boolean(anchorEl);
 
     return (
-      <AppBar position="static" className={classes.bgColor}>
-        <Toolbar>
-          <Grid container spacing={24}>
-            <Grid item xs={0.5}></Grid>
-            <Grid item xs={3.5}>
-              <img className="logoStyle" src={require('./img/logo.png')} />
-            </Grid>
-            <Grid className={classes.gridMargin} item xs={9}>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/'>Home</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/aboutus'>about us</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/gallery'>Gallery</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/methodology'>Methodology</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/admission'>Admission</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/aboutus'>Health & safety</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/aboutus'>programs & events</Link>
-              </Button>
-              <Button size='small' variant="contained" color='primary' className={classes.button}>
-                <Link to='/aboutus'>PARENTS AS PARTNERS</Link>
-              </Button>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      <div>
+        <Navbar color="light" light expand="md">
+          <img width="30%" src={require('./img/logo.png')} />
+          <NavbarToggler onClick={this.toggleNavbar} />
+          <Collapse isOpen={this.state.collapsed} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem >
+                <Button outline color={'success'} className={classes.button}><Link to='/gallery' className={classes.anchor} ><h4 className={classes.anchor}>Gallery</h4></Link></Button>
+              </NavItem>
+              <NavItem>
+                <Button outline color={'success'} className={classes.button}><Link to='/methodology' className={classes.anchor}><h4 className={classes.anchor}>Methodology</h4></Link></Button>
+              </NavItem>
+              <NavItem>
+                <Button outline color={'success'} className={classes.button}><Link to='/admission' className={classes.anchor}><h4 className={classes.anchor}>Admission</h4></Link></Button>
+              </NavItem>
+              <NavItem>
+                <Button outline color={'success'} className={classes.button}><Link to='/aboutus' className={classes.anchor}><h4 className={classes.anchor}>About us</h4></Link></Button>
+              </NavItem>
+              <NavItem>
+                <Button outline color={'success'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
+              </NavItem>
+              <NavItem>
+                <Button outline color={'success'} className={classes.button}><Link to='/' className={classes.anchor}><h4 className={classes.anchor}>Home</h4></Link></Button>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+
     );
   }
 }

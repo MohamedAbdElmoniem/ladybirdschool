@@ -8,6 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Skeleton from 'react-loading-skeleton';
 
 const styles = {
     root: {
@@ -92,7 +93,7 @@ class MethodologyPage extends Component {
                             <TabContainer>{this.state.content[1].desc}</TabContainer>
                             <TabContainer>Item Three</TabContainer>
                         </SwipeableViews>
-                    </div>) : null}
+                    </div>) : <Skeleton count={10} height={20} />}
                 </Grid>
                 <Grid item xs={1}></Grid>
             </Grid>
