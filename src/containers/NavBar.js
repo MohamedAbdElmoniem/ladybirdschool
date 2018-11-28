@@ -42,6 +42,7 @@ const styles = {
   },
   anchor: {
     'text-decoration': 'none',
+    "font-size":"17px",
     "&:hover": {
       'text-decoration': 'none',
       'color': 'white'
@@ -53,10 +54,7 @@ class NavBarComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      auth: true,
-      anchorEl: null,
       collapsed: false
-
     };
   }
   toggleNavbar = () => {
@@ -74,17 +72,15 @@ class NavBarComponent extends Component {
 
   render() {
     const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
-    const open = Boolean(anchorEl);
 
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <img width="30%" src={require('./img/logo.png')} />
+          <img width="30%" src={require('./img/logo.png')} alt="ladybird school" />
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={this.state.collapsed} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem >
+              <NavItem>
                 <Button outline color={'info'} className={classes.button}><Link to='/gallery' className={classes.anchor} ><h6 className={classes.anchor}>Gallery</h6></Link></Button>
               </NavItem>
               <NavItem>
@@ -100,8 +96,11 @@ class NavBarComponent extends Component {
                 <Button outline color={'info'} className={classes.button}><Link to='/safetyandsecurity' className={classes.anchor}><h6 className={classes.anchor}>safety & security</h6></Link></Button>
               </NavItem>
               <NavItem>
-                <Button outline color={'info'} className={classes.button}><Link to='/' className={classes.anchor}><h6 className={classes.anchor}>Home</h6></Link></Button>
+                <Button outline color={'info'} className={classes.button}><Link to='/health' className={classes.anchor}><h6 className={classes.anchor}>Health</h6></Link></Button>
               </NavItem>
+              <NavItem>
+              <Button outline color={'info'} className={classes.button}><Link to='/health' className={classes.anchor}><h6 className={classes.anchor}>Health</h6></Link></Button>
+            </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

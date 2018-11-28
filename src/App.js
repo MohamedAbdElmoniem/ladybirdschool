@@ -10,6 +10,7 @@ import MethodologyPage from "./containers/MethodologyPage";
 import AdmissionPage from "./containers/AdmissionPage";
 import NavBar from "./containers/NavBar";
 import Footer from "./containers/Footer";
+import HealthPage from "./containers/HealthPage";
 import SafetyAndSecurityPage from "./containers/SafetyAndSecurityPage";
 
 const styles = {
@@ -40,6 +41,7 @@ class MenuAppBar extends Component {
           <Route path="/methodology" component={MethodologyPage} />
           <Route path="/admission" component={AdmissionPage} />
           <Route path="/safetyandsecurity" component={SafetyAndSecurityPage} />
+          <Route path="/health" component={HealthPage} />
           <br/>
           <br/>
         </div>

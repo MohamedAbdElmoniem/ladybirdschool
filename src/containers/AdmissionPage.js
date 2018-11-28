@@ -13,6 +13,10 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
         width: 400
     },
+    "colorTitle": {
+        'color': '#cf260f',
+        'text-align':'center'
+    }
 });
 
 class AdmissionPage extends Component {
@@ -40,7 +44,7 @@ class AdmissionPage extends Component {
                         <Col sm={6}>
                             <Card>
                                 <CardHeader>
-                                    {content[0].title}
+                                    <h4 className={classes.colorTitle}>{content[0].title}</h4>
                                 </CardHeader>
                                 <CardBody>{content[0].desc}</CardBody>
                             </Card>
@@ -48,7 +52,7 @@ class AdmissionPage extends Component {
                         <Col sm={6}>
                             <Card>
                                 <CardHeader>
-                                    {content[1].title}
+                                <h4 className={classes.colorTitle}>{content[1].title}</h4>
                                 </CardHeader>
                                 <CardBody>{content[1].desc.map((value, index) => {
                                     return <p>- {value}</p>

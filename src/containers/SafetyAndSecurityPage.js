@@ -13,6 +13,10 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
         width: 400
     },
+    "colorTitle": {
+        'color': '#cf260f',
+        'text-align': 'center'
+    }
 });
 class SafetyAndSecurityPage extends Component {
 
@@ -41,15 +45,10 @@ class SafetyAndSecurityPage extends Component {
                         <Col sm={6}>
                             <Card>
                                 <CardHeader>
-                                    <Row>
-                                        <Col sm={2}></Col>
-                                        <Col sm={9}>
-                                        <h3>{currentData.pageName}</h3>                                        
-                                        </Col>
-                                    </Row>
+                                    <h4 className={classes.colorTitle}>{currentData.pageName}</h4>
                                 </CardHeader>
                                 <CardBody>{currentData.content.map((val, index) => {
-                                    return (<h5>{val}</h5>)
+                                    return (<h6>{val}</h6>)
                                 })}</CardBody>
                             </Card>
                         </Col>
