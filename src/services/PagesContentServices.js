@@ -14,7 +14,7 @@ export const PagesContentServices = {
         return Axios.get('https://api.jsonbin.io/b/5bf97d58bd6fba76967f5aa9/2')
     },
     getSafetyAndSecurityPageContent: function () {
-        return Axios.get('https://api.jsonbin.io/b/5bf97dcf484e637664002434')
+        return Axios.get('https://api.jsonbin.io/b/5bfef56899d3ae6554926334')
     },
     getHealthPageContent: function () {
         return Axios.get('https://api.jsonbin.io/b/5bf97e8a484e63766400247b')

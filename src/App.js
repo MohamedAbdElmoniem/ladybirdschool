@@ -10,7 +10,7 @@ import MethodologyPage from "./containers/MethodologyPage";
 import AdmissionPage from "./containers/AdmissionPage";
 import NavBar from "./containers/NavBar";
 import Footer from "./containers/Footer";
-import Button from '@material-ui/core/Button';
+import SafetyAndSecurityPage from "./containers/SafetyAndSecurityPage";
 
 const styles = {
   root: {
@@ -39,6 +39,7 @@ class MenuAppBar extends Component {
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/methodology" component={MethodologyPage} />
           <Route path="/admission" component={AdmissionPage} />
+          <Route path="/safetyandsecurity" component={SafetyAndSecurityPage} />
           <br/>
           <br/>
         </div>
