@@ -42,7 +42,7 @@ const styles = {
   },
   anchor: {
     'text-decoration': 'none',
-    "font-size":"17px",
+    "font-size":"14px",
     "&:hover": {
       'text-decoration': 'none',
       'color': 'white'
@@ -101,6 +101,9 @@ class NavBarComponent extends Component {
               <NavItem>
               <Button outline color={'info'} className={classes.button}><Link to='/health' className={classes.anchor}><h6 className={classes.anchor}>Health</h6></Link></Button>
             </NavItem>
+            <NavItem>
+            <Button outline color={'info'} className={classes.button}><Link to='/health' className={classes.anchor}><h6 className={classes.anchor}>Videos</h6></Link></Button>
+          </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

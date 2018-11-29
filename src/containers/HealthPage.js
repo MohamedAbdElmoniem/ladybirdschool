@@ -80,7 +80,7 @@ class HealthPage extends Component {
                         </Row>
                     </Container>
                 )
-                    : <Skeleton count={10} height={20} />
+                    : <Skeleton count={20} height={20} />
                 }
             </div>
         )

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { PagesContentServices } from "../services/PagesContentServices";
 import Skeleton from 'react-loading-skeleton';
-import { Col, Row, Card, CardBody, CardHeader, Container } from "reactstrap";
+import { Col, Row, Card, CardBody, CardHeader, Container, ListGroup, ListGroupItem } from "reactstrap";
 
 const styles = theme => ({
     root: {
@@ -15,7 +15,7 @@ const styles = theme => ({
     },
     "colorTitle": {
         'color': '#cf260f',
-        'text-align':'center'
+        'text-align': 'center'
     }
 });
 
@@ -52,16 +52,16 @@ class AdmissionPage extends Component {
                         <Col sm={6}>
                             <Card>
                                 <CardHeader>
-                                <h4 className={classes.colorTitle}>{content[1].title}</h4>
+                                    <h4 className={classes.colorTitle}>{content[1].title}</h4>
                                 </CardHeader>
                                 <CardBody>{content[1].desc.map((value, index) => {
-                                    return <p>- {value}</p>
+                                    return <ListGroupItem>- {value}</ListGroupItem>
                                 })}</CardBody>
                             </Card>
                         </Col>
                     </Row>
                 )
-                    : <Skeleton count={10} height={20} />}
+                    : <Skeleton count={20} height={20} />}
             </Container>
         )
     }

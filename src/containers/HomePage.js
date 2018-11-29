@@ -5,7 +5,13 @@ import { PagesContentServices } from "../services/PagesContentServices";
 import * as _ from 'lodash'
 import CardRow from "../components/CardRow";
 import Skeleton from 'react-loading-skeleton';
-import {Container} from "reactstrap";
+import {
+  Container, Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption, Col, Row
+} from "reactstrap";
 
 const styles = {
   root: {
@@ -33,14 +39,38 @@ const styles = {
     // ⚠️ object-fit is not supported by IE 11.
     objectFit: 'cover',
   },
+  formatImages: {
+    'height': '350px'
+  }
 };
+
+const items = [
+  {
+    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
+    caption: 'ladybird school'
+  },
+  {
+    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
+    caption: 'ladybird school'
+  },
+  {
+    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
+    caption: 'ladybird school'
+  }
+];
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      homeContent: []
+      homeContent: [],
+      activeIndex: 0
     };
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.goToIndex = this.goToIndex.bind(this);
+    this.onExiting = this.onExiting.bind(this);
+    this.onExited = this.onExited.bind(this);
   }
 
   componentDidMount() {
@@ -49,15 +79,74 @@ class HomePage extends Component {
     })
   }
 
+  onExiting() {
+    this.animating = true;
+  }
+
+  onExited() {
+    this.animating = false;
+  }
+
+  next() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  goToIndex(newIndex) {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
+
   render() {
     const { classes } = this.props;
+    const { activeIndex } = this.state;
+
+    const slides = items.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={item.src}
+          className={classes.formatImages}
+        >
+          <img height="100%" width="100%" src={item.src} alt={item.altText} />
+          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+
     return (
       <Container>
+        <Row>
+          <Col sm={0}></Col>
+          <Col sm={12} className={classes.formatImages}
+          >
+            <Carousel
+              activeIndex={activeIndex}
+              next={this.next}
+              previous={this.previous}
+            >
+              <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+              {slides}
+              <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+              <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+            </Carousel>
+          </Col>
+          <Col sm={0}></Col>
+        </Row>
+        <br />
         {this.state.homeContent.length > 0 ? this.state.homeContent.map((cardRowDataArray, index) => {
           return (
             [<CardRow cardRowDataArray={cardRowDataArray} />, <br />]
           )
-        }) : <Skeleton count={10} height={20} />
+        }) : <Skeleton count={15} height={20} />
         }
       </Container>
     );

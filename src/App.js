@@ -32,7 +32,7 @@ class MenuAppBar extends Component {
 
     return (
       <Router>
-        <div className={classes.root}>
+        <div className={classes.root} id="body">
           <NavBar></NavBar>
           <br/>
           <Route path="/" exact component={HomePage} />

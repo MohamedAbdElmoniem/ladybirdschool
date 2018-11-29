@@ -94,7 +94,7 @@ class MethodologyPage extends Component {
                             <TabContainer className={classes.tabBodyColor}>{this.state.content[1].desc}</TabContainer>
                             <TabContainer className={classes.tabBodyColor}>Item Three</TabContainer>
                         </SwipeableViews>
-                    </div>) : <Skeleton count={10} height={20} />}
+                    </div>) : <Skeleton count={20} height={20} />}
                 </Grid>
                 <Grid item xs={1}></Grid>
             </Grid>

@@ -156,3 +156,9 @@ a:-webkit-any-link {
   height:130px;
   width:250px;
 }
+
+#body{
+  background: linear-gradient(rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.845)),url('./containers/img/bg2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover
+}

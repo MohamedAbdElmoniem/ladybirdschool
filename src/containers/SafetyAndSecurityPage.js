@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import { Col, Row, Card, CardBody, CardHeader, Container } from "reactstrap";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { getImagePaths } from "../services/ImagePaths";
 
 const styles = theme => ({
     root: {
@@ -16,6 +17,10 @@ const styles = theme => ({
     "colorTitle": {
         'color': '#cf260f',
         'text-align': 'center'
+    },
+    editCol: {
+        "width": "160px",
+        "height": '160px'
     }
 });
 class SafetyAndSecurityPage extends Component {
@@ -23,11 +28,15 @@ class SafetyAndSecurityPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentData: undefined
+            currentData: undefined,
+            ImagePaths: undefined
         }
     }
 
     componentDidMount() {
+        getImagePaths().then((response) => {
+            this.setState({ ImagePaths: response.data.imagePaths })
+        })
         PagesContentServices.getSafetyAndSecurityPageContent().then((response) => {
             this.setState({ currentData: response.data })
         })
@@ -39,6 +48,21 @@ class SafetyAndSecurityPage extends Component {
         const { currentData } = this.state;
         return (
             <Container>
+                {this.state.ImagePaths ? <Row>
+                    <Col lg={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[0]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    </Col>
+                    <Col lg={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[1]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    </Col>
+                    <Col lg={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[2]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    </Col>
+                    <Col lg={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[3]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    </Col>
+                </Row> : null}
+                <br />
                 {currentData && currentData.content.length > 0 ? (
                     <Row>
                         <Col sm={3}></Col>
@@ -55,7 +79,7 @@ class SafetyAndSecurityPage extends Component {
                         <Col sm={3}></Col>
                     </Row>
                 )
-                    : <Skeleton count={10} height={20} />}
+                    : <Skeleton count={20} height={20} />}
             </Container>
         )
     }
