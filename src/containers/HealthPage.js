@@ -17,6 +17,9 @@ const styles = theme => ({
     "colorTitle":{
         'color':'#cf260f',
         'text-align':'center'
+    },
+    cardHeaderColor:{
+        'background-color': '#ffd700a1'
     }
 });
 class HealthPage extends Component {
@@ -46,7 +49,7 @@ class HealthPage extends Component {
                             <Col sm={2}></Col>
                             <Col sm={8}>
                                 <Card>
-                                    <CardHeader>
+                                    <CardHeader className={classes.cardHeaderColor}>
                                         <h4 className={classes.colorTitle}>Health And Nutrition</h4>
                                     </CardHeader>
                                     <CardBody>
@@ -69,7 +72,7 @@ class HealthPage extends Component {
                                     return (
                                         <Col sm={6}>
                                             <Card>
-                                                <CardHeader><h4 className={classes.colorTitle}>{val.title}</h4></CardHeader>
+                                                <CardHeader className={classes.cardHeaderColor}><h4 className={classes.colorTitle}>{val.title}</h4></CardHeader>
                                                 <CardBody>{val.content}</CardBody>
                                             </Card>
                                         </Col>

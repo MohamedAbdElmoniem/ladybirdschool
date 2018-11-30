@@ -38,6 +38,9 @@ const styles = {
   },
   collapseItem: {
     'background-color': "#b1d3f8"},
+    cardHeaderColor:{
+      'background-color': '#ffd700a1'
+  }
 };
 
 class AboutUsPage extends Component {
@@ -55,7 +58,7 @@ class AboutUsPage extends Component {
       <Row>
         <Col sm={2}></Col>
         <Col sm={8}>
-          <Card><CardHeader><h4 className={classes.colorTitle}>About Us</h4></CardHeader>
+          <Card><CardHeader className={classes.cardHeaderColor}><h4 className={classes.colorTitle}>About Us</h4></CardHeader>
             <CardBody>
               <Typography component="p" align='center' paragraph className={classes.textP}>
                 Ladybird is a play-based year-round daycare in Cairo that offers outstanding care and facilities for children aged 1 to 4, with an emphasis on full character development. Ladybird has been on grounds since 1999. We work on nurturing the 5 main areas of development; social/ emotional/ cognitive/ physical/ language and creativity aspects. Its safe to say that at Ladybird, we have a passion for excellence. Backed up by the experience of years, we have put together morals, academic content & loads of fun to come up with our own custom curriculum and methodology that assures the smoothest preparation for a child’s future.

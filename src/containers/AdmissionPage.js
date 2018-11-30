@@ -16,6 +16,9 @@ const styles = theme => ({
     "colorTitle": {
         'color': '#cf260f',
         'text-align': 'center'
+    },
+    cardHeaderColor:{
+        'background-color': '#ffd700a1'
     }
 });
 
@@ -43,7 +46,7 @@ class AdmissionPage extends Component {
                     <Row>
                         <Col sm={6}>
                             <Card>
-                                <CardHeader>
+                                <CardHeader className={classes.cardHeaderColor}>
                                     <h4 className={classes.colorTitle}>{content[0].title}</h4>
                                 </CardHeader>
                                 <CardBody>{content[0].desc}</CardBody>
@@ -51,7 +54,7 @@ class AdmissionPage extends Component {
                         </Col>
                         <Col sm={6}>
                             <Card>
-                                <CardHeader>
+                                <CardHeader className={classes.cardHeaderColor}>
                                     <h4 className={classes.colorTitle}>{content[1].title}</h4>
                                 </CardHeader>
                                 <CardBody>{content[1].desc.map((value, index) => {

@@ -20,8 +20,13 @@ const styles = theme => ({
     },
     editCol: {
         "width": "160px",
-        "height": '160px'
+        "height": '160px',
+        paddingLeft:20
+    },
+    cardHeaderColor:{
+        'background-color': '#ffd700a1'
     }
+   
 });
 class SafetyAndSecurityPage extends Component {
 
@@ -49,17 +54,17 @@ class SafetyAndSecurityPage extends Component {
         return (
             <Container>
                 {this.state.ImagePaths ? <Row>
-                    <Col lg={3} className={classes.editCol}>
-                        <img class="rounded-circle" src={this.state.ImagePaths[0]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    <Col md={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[0]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col lg={3} className={classes.editCol}>
-                        <img class="rounded-circle" src={this.state.ImagePaths[1]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    <Col md={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[1]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col lg={3} className={classes.editCol}>
-                        <img class="rounded-circle" src={this.state.ImagePaths[2]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    <Col md={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[2]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col lg={3} className={classes.editCol}>
-                        <img class="rounded-circle" src={this.state.ImagePaths[3]} alt="Generic placeholder image" width="100%" height="100%"></img>
+                    <Col md={3} className={classes.editCol}>
+                        <img class="rounded-circle" src={this.state.ImagePaths[3]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
                 </Row> : null}
                 <br />
@@ -68,7 +73,7 @@ class SafetyAndSecurityPage extends Component {
                         <Col sm={3}></Col>
                         <Col sm={6}>
                             <Card>
-                                <CardHeader>
+                                <CardHeader className={classes.cardHeaderColor}>
                                     <h4 className={classes.colorTitle}>{currentData.pageName}</h4>
                                 </CardHeader>
                                 <CardBody>{currentData.content.map((val, index) => {
