@@ -25,6 +25,7 @@ class MenuAppBar extends Component {
     this.state = {
 
     };
+ 
   }
 
   render() {

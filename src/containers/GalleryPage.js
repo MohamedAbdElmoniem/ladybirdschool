@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Gallery from 'react-grid-gallery';
 import { getImagePaths } from "../services/ImagePaths";
 import Skeleton from 'react-loading-skeleton';
-
+import Zoom from 'react-reveal/Zoom';
 
 
 const styles = {
@@ -36,7 +36,7 @@ class GalleryPage extends Component {
                     thumbnailHeight: 212
                 }
             })
-            this.setState({IMAGES:finalImageGalleryCollection})
+            this.setState({ IMAGES: finalImageGalleryCollection })
         })
     }
 
@@ -47,7 +47,7 @@ class GalleryPage extends Component {
             <Grid container spacing={24}>
                 <Grid item xs={2}></Grid>
                 <Grid item xs className={classes.addMargin}>
-                    {this.state.IMAGES ? <Gallery images={this.state.IMAGES} /> : <Skeleton count={20} height={20} />}
+                    {this.state.IMAGES ? <Zoom><Gallery images={this.state.IMAGES} /></Zoom> : <Skeleton count={20} height={20} />}
                 </Grid>
                 <Grid item xs={2}></Grid>
             </Grid>

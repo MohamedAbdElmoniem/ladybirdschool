@@ -10,14 +10,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav, Button,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavItem
 } from 'reactstrap';
 const styles = {
   root: {
@@ -56,6 +50,9 @@ class NavBarComponent extends Component {
     this.state = {
       collapsed: false
     };
+    this.url = "https://s1.vocaroo.com/media/download_temp/Vocaroo_s1mSfk0bG2Gy.mp3";
+    this.audio = new Audio(this.url);
+    this.audio.play();
   }
   toggleNavbar = () => {
     this.setState({
