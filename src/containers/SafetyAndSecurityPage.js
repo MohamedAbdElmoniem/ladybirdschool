@@ -54,16 +54,16 @@ class SafetyAndSecurityPage extends Component {
         return (
             <Container>
                 {this.state.ImagePaths ? <Row>
-                    <Col md={3} className={classes.editCol}>
+                    <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[0]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col md={3} className={classes.editCol}>
+                    <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[1]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col md={3} className={classes.editCol}>
+                    <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[2]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                    <Col md={3} className={classes.editCol}>
+                    <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[3]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
                 </Row> : null}

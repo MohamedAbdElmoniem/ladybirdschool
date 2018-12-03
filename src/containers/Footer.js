@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar } from "reactstrap";
+import { Link } from "react-router-dom";
 export default class Footer extends Component {
     render() {
         return (
@@ -12,9 +13,9 @@ export default class Footer extends Component {
                         <div class="col-sm-2">
                             <h5>Ladybird school</h5>
                             <ul>
-                                <li><a href="#">Ladybird school</a></li>
-                                <li><a href="#">Ladybird school</a></li>
-                                <li><a href="#">Ladybird school</a></li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/aboutus">about us</Link></li>
+                                <li><Link to="/gallery">gallery</Link></li>
                             </ul>
                         </div>
                         <div class="col-sm-2">

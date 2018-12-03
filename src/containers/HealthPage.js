@@ -4,7 +4,6 @@ import Skeleton from 'react-loading-skeleton';
 import { Col, Row, Card, CardBody, CardHeader, Container } from "reactstrap";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { calendarFormat } from 'moment';
 
 const styles = theme => ({
     root: {
