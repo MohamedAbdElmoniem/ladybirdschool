@@ -68,6 +68,7 @@ class MethodologyPage extends Component {
     render() {
         const { classes } = this.props;
         return (
+            <div>
             <Grid container spacing={24}>
                 <Grid item xs={1}></Grid>
                 <Grid item xs>
@@ -98,6 +99,15 @@ class MethodologyPage extends Component {
                 </Grid>
                 <Grid item xs={1}></Grid>
             </Grid>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            </div>
         )
     }
 }

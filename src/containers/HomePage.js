@@ -46,18 +46,30 @@ const styles = {
 
 const items = [
   {
-    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
-    caption: 'ladybird school'
+    "src": "https://i.lensdump.com/i/ApBB5q.jpg",
+    "caption": "ladybird school"
   },
   {
-    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
-    caption: 'ladybird school'
+    "src": "https://i.lensdump.com/i/Apqu80.jpg",
+    "caption": "ladybird school"
   },
   {
-    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
-    caption: 'ladybird school'
+    "src": "https://i.lensdump.com/i/Apqwmk.jpg",
+    "caption": "ladybird school"
+  },
+  {
+    "src": "https://i.lensdump.com/i/ApBgA2.jpg",
+    "caption": "ladybird school"
+  },
+  {
+    "src": "https://i.lensdump.com/i/ApsDQ2.jpg",
+    "caption": "ladybird school"
+  },
+  {
+    "src": "https://i.lensdump.com/i/ApshyD.jpg",
+    "caption": "ladybird school"
   }
-];
+]
 
 class HomePage extends Component {
   constructor(props) {
