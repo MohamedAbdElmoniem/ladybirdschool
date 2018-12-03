@@ -11,6 +11,7 @@ import AdmissionPage from "./containers/AdmissionPage";
 import NavBar from "./containers/NavBar";
 import Footer from "./containers/Footer";
 import HealthPage from "./containers/HealthPage";
+import VideosPage from "./containers/VideosPage";
 import SafetyAndSecurityPage from "./containers/SafetyAndSecurityPage";
 
 const styles = {
@@ -43,6 +44,7 @@ class MenuAppBar extends Component {
           <Route path="/admission" component={AdmissionPage} />
           <Route path="/safetyandsecurity" component={SafetyAndSecurityPage} />
           <Route path="/health" component={HealthPage} />
+          <Route path="/videos" component={VideosPage} />
           <br/>
           <br/>
         </div>

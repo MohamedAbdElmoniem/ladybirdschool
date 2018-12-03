@@ -159,6 +159,6 @@ a:-webkit-any-link {
 
 #body{
   background: linear-gradient(rgba(255, 255, 255, 0.658), rgba(255, 255, 255, 0.678)),url('https://i.lensdump.com/i/ASMmAa.jpg');
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
