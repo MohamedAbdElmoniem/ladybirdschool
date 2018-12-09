@@ -98,9 +98,6 @@ class NavBarComponent extends Component {
               <NavItem>
               <Button outline color={'info'} className={classes.button}><Link to='/videos' className={classes.anchor}><h6 className={classes.anchor}>Videos</h6></Link></Button>
             </NavItem>
-            <NavItem>
-            <Button outline color={'info'} className={classes.button}><Link to='/health' className={classes.anchor}><h6 className={classes.anchor}>Videos</h6></Link></Button>
-          </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

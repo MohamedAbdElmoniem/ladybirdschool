@@ -5,6 +5,7 @@ import { Col, Row, Card, CardBody, CardHeader, Container } from "reactstrap";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { getImagePaths } from "../services/ImagePaths";
+import Zoom from "react-reveal/Zoom";
 
 const styles = theme => ({
     root: {
@@ -53,7 +54,7 @@ class SafetyAndSecurityPage extends Component {
         const { currentData } = this.state;
         return (
             <Container>
-                {this.state.ImagePaths ? <Row>
+                {this.state.ImagePaths ? <Zoom><Row> 
                     <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[0]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
@@ -66,7 +67,7 @@ class SafetyAndSecurityPage extends Component {
                     <Col sm={3} className={classes.editCol}>
                         <img class="rounded-circle" src={this.state.ImagePaths[3]} alt="Generic placeholder image" width="70%" height="100%"></img>
                     </Col>
-                </Row> : null}
+                </Row></Zoom> : null}
                 <br />
                 {currentData && currentData.content.length > 0 ? (
                     <Row>

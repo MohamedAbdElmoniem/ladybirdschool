@@ -13,11 +13,11 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
         width: 400
     },
-    "colorTitle":{
-        'color':'#cf260f',
-        'text-align':'center'
+    "colorTitle": {
+        'color': '#cf260f',
+        'text-align': 'center'
     },
-    cardHeaderColor:{
+    cardHeaderColor: {
         'background-color': '#ffd700a1'
     }
 });
@@ -42,48 +42,50 @@ class HealthPage extends Component {
         const { currentData } = this.state;
         return (
             <div>
-                {currentData && currentData.content.length > 0 ? (
-                    <Container>
-                        <Row>
-                            <Col sm={2}></Col>
-                            <Col sm={8}>
-                                <Card>
-                                    <CardHeader className={classes.cardHeaderColor}>
-                                        <h4 className={classes.colorTitle}>Health And Nutrition</h4>
-                                    </CardHeader>
-                                    <CardBody>
-                                        {currentData.content[0].content}
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                            <Col sm={2}></Col>
-                        </Row>
-                        <br />
-                        <Row>
-                            <Col sm={2}></Col>
-                            <Col sm={8}><img width="100%" src={currentData.content[0].tableImg} alt="ladybird school" /></Col>
-                            <Col sm={2}></Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            {currentData.content.map((val, index) => {
-                                if (index !== 0) {
-                                    return (
-                                        <Col sm={6}>
-                                            <Card>
-                                                <CardHeader className={classes.cardHeaderColor}><h4 className={classes.colorTitle}>{val.title}</h4></CardHeader>
-                                                <CardBody>{val.content}</CardBody>
-                                            </Card>
-                                        </Col>
-                                    )
-                                }
-                                return null
-                            })}
-                        </Row>
-                    </Container>
-                )
-                    : <Skeleton count={20} height={20} />
-                }
+                <Container>
+                    {currentData && currentData.content.length > 0 ? (
+                        <div>
+                            <Row>
+                                <Col sm={2}></Col>
+                                <Col sm={8}>
+                                    <Card>
+                                        <CardHeader className={classes.cardHeaderColor}>
+                                            <h4 className={classes.colorTitle}>Health And Nutrition</h4>
+                                        </CardHeader>
+                                        <CardBody>
+                                            {currentData.content[0].content}
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col sm={2}></Col>
+                            </Row>
+                            <br />
+                            <Row>
+                                <Col sm={2}></Col>
+                                <Col sm={8}><img width="100%" src={currentData.content[0].tableImg} alt="ladybird school" /></Col>
+                                <Col sm={2}></Col>
+                            </Row>
+                            <br />
+                            <Row>
+                                {currentData.content.map((val, index) => {
+                                    if (index !== 0) {
+                                        return (
+                                            <Col sm={6}>
+                                                <Card>
+                                                    <CardHeader className={classes.cardHeaderColor}><h4 className={classes.colorTitle}>{val.title}</h4></CardHeader>
+                                                    <CardBody>{val.content}</CardBody>
+                                                </Card>
+                                            </Col>
+                                        )
+                                    }
+                                    return null
+                                })}
+                            </Row>
+                        </div>
+                    )
+                        : <Skeleton count={20} height={20} />
+                    }
+                </Container>
             </div>
         )
     }

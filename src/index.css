@@ -162,3 +162,7 @@ a:-webkit-any-link {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
+.playerTheme{
+  border:0.5px solid black;
+}

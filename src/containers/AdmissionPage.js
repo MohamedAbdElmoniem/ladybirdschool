@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { PagesContentServices } from "../services/PagesContentServices";
 import Skeleton from 'react-loading-skeleton';
 import { Col, Row, Card, CardBody, CardHeader, Container, ListGroup, ListGroupItem } from "reactstrap";
+import Zoom from "react-reveal/Zoom";
 
 const styles = theme => ({
     root: {
@@ -42,7 +43,9 @@ class AdmissionPage extends Component {
         const { content } = this.state;
         return (
             <Container>
+            
                 {this.state.content.length > 0 ? (
+                    <Zoom>
                     <Row>
                         <Col sm={6}>
                             <Card>
@@ -63,8 +66,10 @@ class AdmissionPage extends Component {
                             </Card>
                         </Col>
                     </Row>
+                    </Zoom>
                 )
                     : <Skeleton count={20} height={20} />}
+                   
             </Container>
         )
     }
